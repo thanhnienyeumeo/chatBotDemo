@@ -84,7 +84,7 @@ model.load('./models/model.tflearn')
 # data structure to hold user context
 context = {}
 
-ERROR_THRESHOLD = 0.25
+ERROR_THRESHOLD = 0.25  
 def classify(sentence):
     results = model.predict([bow(sentence, words)])[0]
     results = [[i,r] for i,r in enumerate(results) if r>ERROR_THRESHOLD]
